@@ -1,0 +1,414 @@
+/* --- Variables --- */
+:root {
+    --xtl-gold: #FFC107;
+    --xtl-dark: #212529;
+    --xtl-grey: #f8f9fa;
+}
+
+/* --- General Styles --- */
+body {
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .nav-link, .btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.text-gold { color: var(--xtl-gold) !important; }
+.text-info { color: #0dcaf0 !important; } /* For the snowflake icon */
+
+/* --- Navbar & Top Bar --- */
+.top-bar { background-color: var(--xtl-dark); font-size: 0.8rem; }
+.top-bar a { color: #ccc; text-decoration: none; margin-left: 20px; transition: 0.3s; }
+.top-bar a:hover { color: var(--xtl-gold); }
+.main-navbar { background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.nav-link { color: var(--xtl-dark) !important; padding: 1.5rem 1rem !important; transition: 0.3s; }
+.nav-link:hover { color: var(--xtl-gold) !important; }
+.nav-item-login { background-color: var(--xtl-gold); clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); padding-left: 10px; }
+.nav-item-login .nav-link:hover { color: black !important; }
+
+/* --- Custom Buttons --- */
+.btn-gold { background-color: var(--xtl-gold); color: var(--xtl-dark); font-weight: 800; padding: 12px 30px; border-radius: 0; border: none; transition: 0.3s;}
+.btn-gold:hover { background-color: #e0a800; color: black; }
+.btn-outline-light-custom { border: 2px solid white; color: white; padding: 12px 30px; border-radius: 0; transition: 0.3s; font-weight: 800;}
+.btn-outline-light-custom:hover { background-color: white; color: var(--xtl-dark); }
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1586864387967-d022b6c0a745?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center;
+    color: white; padding: 180px 0 240px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+/* --- Feature Cards (Overlap) --- */
+.overlap-cards { position: relative; z-index: 10; margin-top: -120px; margin-bottom: 80px; }
+.feature-icon-box {
+    background: white; color: var(--xtl-dark); text-align: center; padding: 40px 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15); border-bottom: 6px solid var(--xtl-gold);
+    transition: transform 0.3s ease;
+}
+.feature-icon-box:hover { transform: translateY(-10px); }
+.feature-icon-box i { font-size: 3rem; color: var(--xtl-gold); margin-bottom: 20px; }
+
+/* --- Content Sections (Dark & Light) --- */
+.section-dark { background-color: var(--xtl-dark); color: white; }
+.section-light { background-color: var(--xtl-grey); color: var(--xtl-dark); }
+
+/* --- Logistics Section Angled Elements --- */
+.angled-image-container {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    position: relative; z-index: 2;
+}
+.angled-separator {
+    position: absolute; bottom: 0; right: 0; width: 40%; height: 100%;
+    background-color: var(--xtl-gold);
+    clip-path: polygon(70% 0, 80% 0, 30% 100%, 20% 100%);
+    opacity: 0.3; z-index: 1;
+}
+
+/* --- Drivers CTA Banner --- */
+.drivers-cta {
+    background: linear-gradient(to right, rgba(0,0,0,0.9) 40%, rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1506306451988-4621869b3340?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+    margin: 50px 0;
+}
+/* The white angled road line on the right */
+.drivers-cta::after {
+    content: ''; position: absolute; top: 0; right: 10%;
+    width: 150px; height: 100%; background-color: white;
+    clip-path: polygon(40% 0, 100% 0, 60% 100%, 0% 100%);
+}
+
+/* --- News Form Section --- */
+.news-form-section {
+    background: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=80') no-repeat center left;
+    background-size: cover; min-height: 600px;
+}
+.form-container {
+    background-color: rgba(255, 193, 7, 0.95); /* Gold with opacity */
+    color: var(--xtl-dark);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.custom-input {
+    background-color: transparent; border: 2px solid white;
+    color: var(--xtl-dark); font-weight: 600; border-radius: 0; padding: 12px;
+}
+.custom-input::placeholder { color: var(--xtl-dark); opacity: 0.7; }
+
+/* --- Locations Map Section --- */
+.locations-section {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center; position: relative;
+}
+.caution-stripe-top {
+    position: absolute; top: 0; left: 0; width: 100%; height: 40px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--xtl-gold),
+        var(--xtl-gold) 20px,
+        var(--xtl-dark) 20px,
+        var(--xtl-dark) 40px
+    );
+}
+/* --- About Hero --- */
+.about-hero {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 180px 0 220px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+}
+
+/* --- Dark background utility for the info box --- */
+.bg-black-50 {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.border-gold {
+    border-color: var(--xtl-gold) !important;
+}
+
+/* Ensure the cards have equal height if the text varies */
+.feature-icon-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+/* --- Services Hero --- */
+.services-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0 180px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+/* --- Service Card Styles --- */
+.service-card {
+    background: white;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    border-bottom: 5px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 5px solid var(--xtl-gold);
+}
+
+.service-icon {
+    font-size: 3.5rem;
+    color: var(--xtl-gold);
+    margin-bottom: 25px;
+}
+
+.service-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: var(--xtl-dark);
+}
+
+/* --- Section Formatting --- */
+.section-light {
+    background-color: #fcfcfc;
+}
+
+/* Ensure images in dark section stand out */
+.section-dark img {
+    border: 5px solid rgba(255, 255, 255, 0.1);
+}
+/* --- Contact Hero --- */
+.contact-hero {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 150px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+}
+
+/* --- Overlap Adjustment for Contact Form --- */
+.overlap-cards-contact {
+    position: relative;
+    z-index: 10;
+    margin-top: -80px;
+    margin-bottom: 80px;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 193, 7, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.gold-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--xtl-gold);
+    margin-top: 15px;
+}
+
+/* --- Form Improvements --- */
+.form-control:focus, .form-select:focus {
+    border-color: var(--xtl-gold);
+    box-shadow: none;
+}
+
+.form-label {
+    letter-spacing: 1px;
+    color: #555;
+}
+
+/* --- Map Section --- */
+.map-section {
+    border-top: 5px solid var(--xtl-gold);
+}
+/* --- Management Hero --- */
+.management-hero {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0 160px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+/* --- CEO Image Styling --- */
+.ceo-image-wrapper {
+    position: relative;
+}
+
+.ceo-tag {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    min-width: 250px;
+    text-align: center;
+    box-shadow: 10px 10px 0px var(--xtl-dark);
+}
+
+.grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.ceo-image-wrapper:hover .grayscale,
+.team-card:hover .grayscale {
+    filter: grayscale(0%);
+}
+
+/* --- Team Cards --- */
+.team-card {
+    background: #2b3035; /* Slightly lighter than xtl-dark */
+    border: 1px solid rgba(255, 193, 7, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--xtl-gold);
+}
+
+.team-img {
+    height: 350px;
+    overflow: hidden;
+}
+
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* --- Gallery Hero --- */
+.gallery-hero {
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                url('https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0 160px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+}
+
+/* --- Gallery Item Effects --- */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: var(--xtl-dark);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 37, 41, 0.85); /* Semi-transparent xtl-dark */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: 10px solid var(--xtl-gold);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.badge.bg-gold {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+/* --- Footer Styling --- */
+.footer-section {
+    background-color: var(--xtl-dark);
+    position: relative;
+    padding-top: 0;
+}
+
+.footer-caution-stripe {
+    height: 10px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--xtl-gold),
+        var(--xtl-gold) 20px,
+        #000 20px,
+        #000 40px
+    );
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: var(--xtl-gold);
+    padding-left: 8px;
+}
+
+.footer-bottom {
+    background-color: #16191c;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-icons a {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--xtl-gold);
+    color: var(--xtl-dark);
+}
+
+.registration-badge {
+    border-style: dashed !important;
+}
