@@ -38,40 +38,42 @@ h1, h2, h3, h4, h5, .nav-link, .btn {
 
 /* --- Hero Section --- */
 /* --- Hero Section Adjustment --- */
+/* --- Hero Section with Zooming Image --- */
 .hero-section {
     position: relative;
     overflow: hidden;
-    min-height: 80vh; /* Adjust height as needed */
+    min-height: 80vh;
     padding: 160px 0 240px 0;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-    background-color: #000; /* Fallback color */
+    background-color: #000;
 }
 
-/* Video Styling */
-.hero-video {
+.hero-bg-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+    background-size: cover;
     z-index: 0;
-    transform: translate(-50%, -50%);
-    object-fit: cover; /* Ensures the video covers the section */
+    animation: slowZoom 20s infinite alternate ease-in-out;
 }
 
-/* Overlay to ensure text readability */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
 .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the 0.5 to make it darker or lighter */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-
 /* --- Feature Cards (Overlap) --- */
 .overlap-cards { position: relative; z-index: 10; margin-top: -120px; margin-bottom: 80px; }
 .feature-icon-box {
@@ -478,4 +480,5 @@ h1, h2, h3, h4, h5, .nav-link, .btn {
     background-color: #ef233c;
     color: white;
 }
+
 
