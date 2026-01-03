@@ -440,3 +440,42 @@ h1, h2, h3, h4, h5, .nav-link, .btn {
     border-style: dashed !important;
 
 }
+/* --- Detailed Services Section --- */
+.services-detail-section {
+    position: relative;
+}
+
+.service-detail-card {
+    background: #fff;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.service-detail-card:hover {
+    transform: translateX(10px);
+    background: #fdfdfd;
+}
+
+.service-icon-wrap {
+    min-width: 50px;
+    text-align: center;
+}
+
+.border-gold {
+    border-color: var(--xtl-gold) !important;
+}
+
+/* Matching the "Contact Us" Red Button from the image if preferred */
+/* Otherwise, the existing btn-dark/btn-gold works well for consistency */
+.btn-red-accent {
+    background-color: #d90429; /* Industrial Red */
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-red-accent:hover {
+    background-color: #ef233c;
+    color: white;
+}
+
